@@ -62,7 +62,8 @@ http://yuyue.seu.edu.cn/eduplus/order/initOrderIndex.do?sclId=1#
 
 2.单击切换想要选的场馆，此时会多出一个getOrderInfo.do?sclId=1的东西（没跳出来的话可能是没点击显示全部（All））
 
-3.移到最下面有个“表单数据”data，其中会有一个itemId，其中的数字即为场馆号
+3.移到最下面有个“表单数据”data，其中会有一个itemId，对应的数字即为场馆号
+
 例itemId: 10 即为10
 
 ## target_day_flag和target_time
