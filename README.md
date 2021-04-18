@@ -13,6 +13,7 @@ python版本3.7
 
 本项目仅对发起时间为整点如（18:00-19:00）的可预约场馆进行预约，未对类似12:30-13:30的场馆进行处理，原因是我懒得改正则表达式了，有能力且有需要的同学可以自行进行修改。
 
+# 信息填写
 ## username和password
 (很明显)是账号密码
 ```
@@ -20,7 +21,7 @@ username #一卡通号
 password #统一身份密码
 ```
 
-**ids**
+## ids
 指常用联系人，你邀请一起打球的人 填写其代号
 
 代号获取方法：
@@ -35,10 +36,10 @@ http://yuyue.seu.edu.cn/eduplus/order/order/order/getContacts.do?sclId=1&flag=or
 3.这一行代码中，应该具有value项，value='xxxxxx'其中的xxxxxx就是这里的代号
 
 
-**phoneNum**
+## phoneNum
 你的手机号码，必填项
 
-**changguanID**
+## changguanID
 场馆代号 #九龙湖 羽毛球10  兵乓球7  篮球8
 
 获得方法：
@@ -64,7 +65,7 @@ http://yuyue.seu.edu.cn/eduplus/order/initOrderIndex.do?sclId=1#
 3.移到最下面有个“表单数据”data，其中会有一个itemId，其中的数字即为场馆号
 例itemId: 10 即为10
 
-**target_day_flag和target_time**
+## target_day_flag和target_time
 
 1.分别表示选择的日期和时间，
 
@@ -81,7 +82,7 @@ target_day_flag = ['2021-04-16']
 target_time = ['18','19','20'] 
 ```
 
-**token和topic**
+## token和topic
 基于pushplus公众号发送通知的，不填不影响自动预约的结果，但建议填上。
 
 ```
@@ -94,7 +95,7 @@ topic = ''
 ```
 
 
-## 写在最后
+# 写在最后
 
 本脚本主要是写给真心想去场馆打球但始终难以抢到球馆的人的
 
