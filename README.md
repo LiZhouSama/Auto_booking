@@ -19,8 +19,8 @@ password #统一身份密码
 
 **ids**
 指常用联系人，你邀请一起打球的人 填写其代号
-代号获取方法：
 
+代号获取方法：
 1.登录并打开以下链接
 ```
 http://yuyue.seu.edu.cn/eduplus/order/order/order/getContacts.do?sclId=1&flag=order
@@ -36,8 +36,8 @@ http://yuyue.seu.edu.cn/eduplus/order/order/order/getContacts.do?sclId=1&flag=or
 
 **changguanID**
 场馆代号 #九龙湖 羽毛球10  兵乓球7  篮球8
-获得方法：
 
+获得方法：
 1.打开预约链接
 ```
 http://yuyue.seu.edu.cn/eduplus/order/initOrderIndex.do?sclId=1#
