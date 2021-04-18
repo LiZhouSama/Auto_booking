@@ -6,6 +6,7 @@
 东南大学统一身份认证自动登录，采用requests库进行统一认证登录建立session会话，基于tesseract自动填写验证码，发起场馆预约请求。
 
 python版本3.7
+
 注释自以为写的已经非常详细了，完全可根据我提供的链接进行库及tesseract的安装
 
 本项目仅对发起时间为整点如（18:00-19:00）的可预约场馆进行预约，未对类似12:30-13:30的场馆进行处理，原因是我懒得改正则表达式了，有能力且有需要的同学可以自行进行修改。
@@ -21,14 +22,15 @@ password #统一身份密码
 指常用联系人，你邀请一起打球的人 填写其代号
 
 代号获取方法：
+
 1.登录并打开以下链接
 ```
 http://yuyue.seu.edu.cn/eduplus/order/order/order/getContacts.do?sclId=1&flag=order
 ```
 
 2.对着邀请人的那个方框右键点击“检查”或“审查元素”，总之就是按F12，找到那个框对应的代码信息（应该是一个以input开头的）
-3.
-4.这一行代码中，应该具有value项，value='xxxxxx'其中的xxxxxx就是这里的代号
+
+3.这一行代码中，应该具有value项，value='xxxxxx'其中的xxxxxx就是这里的代号
 
 
 **phoneNum**
@@ -38,7 +40,9 @@ http://yuyue.seu.edu.cn/eduplus/order/order/order/getContacts.do?sclId=1&flag=or
 场馆代号 #九龙湖 羽毛球10  兵乓球7  篮球8
 
 获得方法：
+
 1.打开预约链接
+
 ```
 http://yuyue.seu.edu.cn/eduplus/order/initOrderIndex.do?sclId=1#
 ```
@@ -46,10 +50,12 @@ http://yuyue.seu.edu.cn/eduplus/order/initOrderIndex.do?sclId=1#
 2.对着准备预约的场馆的选项右键点击“检查”或“审查元素”，总之就是按F12，找到那个框对应的代码信息（应该也是一个以input开头的）
 
 3.里面有一个changeInfo的信息
-例changeInfo(null, '10', '羽毛球（九龙湖）')就是10
-或者另一个方法的
 
-1.打开网页后按F12，切换到网络（network），清除所有信息。
+例changeInfo(null, '10', '羽毛球（九龙湖）')就是10
+
+方法二
+
+1.打开方法一网页后按F12，切换到网络（network），清除所有信息。
 
 2.单击切换想要选的场馆，此时会多出一个getOrderInfo.do?sclId=1的东西（没跳出来的话可能是没点击显示全部（All））
 
@@ -62,9 +68,12 @@ http://yuyue.seu.edu.cn/eduplus/order/initOrderIndex.do?sclId=1#
 
 2.target_day_flag为空则表示不挑日期（自动预约包含今天在内的下三天内）
 
-格式'2021-04-16'  为空自动预约包含今天在内的下三天内
-如18:00-19:00 则填'18'即可 列表模式
+target_day_flag格式'2021-04-16'  为空自动预约包含今天在内的下三天内
+
+target_time如18:00-19:00 则填'18'即可 列表模式
+
 填写实例如下
+
 ```
 target_day_flag = ['2021-04-16'] 
 target_time = ['18','19','20'] 
@@ -86,9 +95,10 @@ topic = ''
 **写在最后**
 
 本脚本主要是写给真心想去场馆打球但始终难以抢到球馆的人的
+
 故我在这希望各位同学**不要滥用此脚本**
-所以虽然场馆预约后失约的惩罚并不大，但如若各位同学不需要使用已经成功预约到的场馆
-请及时取消预约，**给其他有需要的同学留个地方运动**，谢谢配合！！
+
+所以虽然场馆预约后失约的惩罚并不大，但如若各位同学不需要使用已经成功预约到的场馆，请及时取消预约，**给其他有需要的同学留个地方运动**，谢谢配合！！
 
 如若这个脚本对你有所帮助，请帮我点个**⭐Star**，谢谢！
 
