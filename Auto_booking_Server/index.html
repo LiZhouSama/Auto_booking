@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ch"> -->
+<html lang="cn">
+<head>
+<Script type="text/javascript" Language="JavaScript"> 
+function register(){ 
+document.form1.action="/register"; 
+document.form1.submit(); 
+} 
+function check(){ 
+document.form1.action="/"; 
+document.form1.submit(); 
+}
+function delete2(){ 
+document.form1.action="/delete_S"; 
+document.form1.submit(); 
+} 
+function change(){ 
+document.form1.action="/change_S"; 
+document.form1.submit(); 
+} 
+function show(){ 
+document.form1.action="/show"; 
+document.form1.submit(); 
+} 
+</Script> 
+<title> - Auto_Booking_Server——made by guoguoly - </title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+<style type="text/css">
+
+body{
+font-family: Tahoma,Verdana, Arial, Helvetica, sans-serif;
+font-size:15px;
+}
+p, h1, form, button{border:0; margin:0; padding:0;}
+.spacer{clear:both; height:1px;}
+/* ———– My Form ———– */
+.myform{
+margin:0 auto;
+width:450px;
+padding:14px;
+}
+/* ———– stylized ———– */
+#stylized{
+border:solid 2px #b7ddf2;
+background:#b7ddf2;
+}
+#stylized h1 {
+font-size:26px;
+font-weight:bold;
+margin-bottom:5px;
+text-align:center;
+}
+#stylized p{
+font-size:10px;
+color:#666666;
+margin-bottom:10px;
+border-bottom:solid 1px #b7ddf2;
+padding-bottom:0px;
+float:center;
+}
+#stylized label{
+display:block;
+font-weight:bold;
+text-align:right;
+width:250px;
+float:left;
+}
+#stylized .small{
+color:#666666;
+display:block;
+font-size:8px;
+font-weight:normal;
+text-align:right;
+width:250px;
+}
+#stylized input{
+float:left;
+font-size:8px;
+padding:4px 2px;
+border:solid 1px #aacfe4;
+width:170px;
+margin:2px 0 20px 10px;
+}
+#stylized .sub{
+/* clear:both; */
+/* margin-left:150px; */
+width: 210px;;
+height:32px;
+line-height:30px;
+font-size: xx-large;
+border:1px solid #8b9c56;
+text-align:center;
+color:#336600;
+font-size:8px;
+font-weight:bold;
+cursor:pointer;
+}
+.red{
+color:#ff0000;
+}
+.blue{
+color:#0000FF;
+}
+</style>
+</head>
+<body>
+<div id="stylized" class="myform">
+<form id="form1" name="form1" method="post" action="?">
+<h1>添加账号</h1>
+<p>登录验证用的是统一认证，深夜SEU网络可能不对外开放，所以可能修改不了设置。</p>
+<label>用户名
+<span class="small">就是统一认证的用户名</span>
+</label>
+<input type="text" name="user" id="user" value="" />
+
+<label>密码
+<span class="small">就是统一认证的密码</span>
+</label>
+<input type="text" name="password" id="password" value="" />
+
+<label>ids
+<span class="small">受邀人id号（一卡通号会自动转换）</span>
+</label>
+<input type="text" name="ids" id="ids" value="" />
+
+<label>手机号
+</label>
+<input type="text" name="phoneNum" id="phoneNum" value="" />
+
+<label>目标预约日期
+<span class="small">例：2021-09-01，留空自动预约接下来三天</span>
+</label>
+<input type="text" name="target_day_flag" id="target_day_flag" value="" />
+    
+<label>目标预约时间(注意是英文标点)
+<span class="small">19,20表示预约时间为19:00-20:00以及20:00-21:00</span>
+</label>
+<input type="text" name="target_time" id="target_time" value="19,20" />
+
+<label>通知时间
+<span class="small">该时间段有可预约项就发送通知，格式同上，留空则全部通知，屏蔽通知输入22</span>
+</label>
+<input type="text" name="post_time" id="post_time" value="22" />
+
+<label>pushplus通知号
+<span class="small">http://pushplus.hxtrip.com/ 留空不通知</span>
+</label>
+<input type="text" name="token" id="token" value="" />
+
+<label>pushplus通知群组号
+<span class="small">http://pushplus.hxtrip.com/ 留空不影响</span>
+</label>
+<input type="text" name="topic" id="topic" value="" />
+
+<label>预约场馆号
+<span class="small">10代表羽毛球  7代表乒乓 九龙湖</span>
+</label>
+<input type="text" name="changguanID" id="changguanID" value="10" />
+
+<label>是否直接启动
+<span class="small">1代表直接启动，不填或者0代表暂不启动</span>
+</label>
+<input type="text" name="flag" id="flag" value="0" />
+
+<input class="sub" type="Button" Name="register2" value="提交/修改" onClick="register()"/>
+<input class="sub" Type="Button" Name="check2" Value="查找(输入账号密码自动补全)" onClick="check()"> 
+<input class="sub" Type="Button" Name="delete22" Value="删除(输入账号密码即可)" onClick="delete2()"> 
+<input class="sub" Type="Button" Name="change2" Value="启动or关闭(输入账号密码即可)" onClick="change()"> 
+<input class="sub" Type="Button" Name="show2" Value="显示目前所有已有数据" onClick="show()"> 
+
+<div class="spacer"></div>
+</form>
+ 
+</div>
+</body>
+</html>
