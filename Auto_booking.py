@@ -150,8 +150,8 @@ def yuyue(session,start_time,day,changguanID,ids,phoneNum):
 
 if __name__ == '__main__':
     #信息填写
-    username = '213171245'#一卡通
-    password = '990720guorui'#统一身份密码
+    username = ''#一卡通
+    password = ''#统一身份密码
     ids = 111111#常用联系人代号
     phoneNum = ''#手机号
     session = getsession(username,password)#获取登录后的会话
